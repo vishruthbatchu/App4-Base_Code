@@ -48,14 +48,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 //forgot the last parenthesis, code was not working//
         }
 
-        function coldAdd(){
-            cold_count = cold_count + 1;
+        function GoodSleepScheduleAdd(){
+            GoodSleepSchedule_count = GoodSleepSchedule_count + 1;
         }
 function resultsPercent () {
 	var resultsText = document.getElementById("results");
-	var allergyPercent = (allergy_count/4)*100;
-	var coldPercent = (cold_count/4)*100; 
-resultText.innerHTML = "Probability Of Allergies =" + allergyPercent + "<br> Probability Of A Cold =" + coldPercent; 
+	var BadSleepSchedulePercent = (BadSleepSchedule_count/4)*100;
+	var GoodSleepSchedulePercent = (GoodSleepSchedule_count/4)*100; 
+resultText.innerHTML = "Probability Of BadSleepSchedule =" +  BadSleepSchedulePercent + "<br> Probability Of A GoodSleepSchedule =" + GoodSleepSchedulePercent; 
 
 </script>	
 
@@ -84,7 +84,7 @@ resultText.innerHTML = "Probability Of Allergies =" + allergyPercent + "<br> Pro
 </style>
 	<body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+	<h1>Good or Bad Sleep Schedule?</h1>
 </div>
 	
 <div id="content" class="w3-container">
@@ -102,10 +102,10 @@ resultText.innerHTML = "Probability Of Allergies =" + allergyPercent + "<br> Pro
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?.</p>    
-		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+        <p>Do you wake up well-rested most mornings?.</p>    
+		<a href="#two"  onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black"> Yes</a>
 </div>	
-        <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+        <a href="#two"  onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
 	</div>	
 </div>	
 <!This is two to sepearate the pages>
@@ -115,10 +115,10 @@ resultText.innerHTML = "Probability Of Allergies =" + allergyPercent + "<br> Pro
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Have you had any chills?.</p>
- <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+		<p>Do you go to sleep and wake up at roughly the same time every day?.</p>
+ <a href="#three"  onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>
 </div>
-<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
+<a href="#three"  onclick="BadSleepScheduleAdd();" class="w3-btn w3-black"> No</a>
 <!The two buttons are split>
 	</div>
 </div>	
@@ -129,10 +129,10 @@ resultText.innerHTML = "Probability Of Allergies =" + allergyPercent + "<br> Pro
 	</div>
 
 	<div id="content" class="w3-container">
-		<p>Is your throat sore?</p>
-         <a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+		<p>Do you avoid screens at least 30 minutes before bedtime?.</p>
+         <a href="#four"  onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>
 	</div>
-	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+	<a href="#four"  onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
 <!I separated the buttons.
 </div>
 </div>	
@@ -141,10 +141,10 @@ resultText.innerHTML = "Probability Of Allergies =" + allergyPercent + "<br> Pro
 		<h1>Question 4</h1>
 	</div>
 	<div id="content" class="w3-container">
-		<p>Are your Symptoms improving or worsening? </p>
-	<a href="#five"onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+		<p>Do you get at least 7 hours of sleep on most nights?.</p>
+	<a href="#five"onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black"> Yes</a>
 	</div>	
-         <a href="#five"onclick="coldAdd();" class="w3-btn w3-black">No</a>
+         <a href="#five"onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
 </div>
 </div>	
 <!I separated the buttons again and created a new page.

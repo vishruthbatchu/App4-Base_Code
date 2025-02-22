@@ -82,11 +82,85 @@ resultText.innerHTML = "Probability Of Allergies =" + allergyPercent + "<br> Pro
     z-index: 1;
 }
 </style>
+	<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	
 
-<body>
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+    	<div id="content" class="w3-container">
+        <p>Are your eyes watery or itchy?.</p>    
+		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+</div>	
+        <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	</div>	
+</div>	
+<!This is two to sepearate the pages>
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
 	
+	<div id="content" class="w3-container">
+		<p>Have you had any chills?.</p>
+ <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+</div>
+<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
+<!The two buttons are split>
+	</div>
+</div>	
+
+<div class="page" id="three">
+<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Is your throat sore?</p>
+         <a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+	</div>
+	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+<!I separated the buttons.
+</div>
+</div>	
+	<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	<div id="content" class="w3-container">
+		<p>Are your Symptoms improving or worsening? </p>
+	<a href="#five"onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+	</div>	
+         <a href="#five"onclick="coldAdd();" class="w3-btn w3-black">No</a>
+</div>
+</div>	
+<!I separated the buttons again and created a new page.
+	
+<div class="page" id="five">	
+	<div class="w3-container w3-flat-carrot">
+		<h2>Results </h2>
+<!My mentors helped a lot here. I did not know how to implement the results section. Even after I did, I struggled  with little things, such as where to place the code, quotation marks, etc. >
+</div>
+<div id="content" class="w3-container">
+	<p id="results"></p>
+	<a href="#five" onclick="resultsPercent();" class="w3-btn w3-black"> Results!! </a>
+	
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+<p>DIY!</p>
+</footer>
+
 </body>
 </html>

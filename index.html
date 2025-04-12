@@ -54,7 +54,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	}
 //This following code adds the percentages together//
 	var totalPercent = BadSleepSchedulePercent + GoodSleepSchedulePercent;
-	
+//this code adds a scale. my mentor helped me with this code//
+	if (totalPercent !==100) {
+
+		var scale = 100 / totalPercent ;
+		BadSleepSchedulePercent *= scale;
+		GoodSleepSchedulePercent *= scale;
+	}	
+
+var resultText = document.getElementById("resultText"); //this code triggers the results//
+
+
 
 <!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
 <style>	

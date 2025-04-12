@@ -35,30 +35,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </head> 
 
 <script>
-
-	var BadSleepSchedule_count = 0; //counts the number of bad sleep schedule symptoms
-        var GoodSleepSchedule_count = 0; //counts the number of good sleep schedule symptoms
-
-
-        function BadSleepScheduleAdd(){
+//The code below states how many total questions and the initial values for a good or bad sleep schedule//
+	var totalQuestions =6
+	var BadSleepSchedule_count = 0;
+	var GoodSleepSchedule_count = 0;
+//this following code adds a number everytime the user picks an answer that relates to a bad sleep schedule//
+	function BadSleepScheduleAdd(){
             BadSleepSchedule_count = BadSleepSchedule_count + 1;
-		alert(BadSleepSchedule_count);
-        } //adds the number of bad sleep schedule symptoms 
-
-        function GoodSleepScheduleAdd(){
+	}
+//this following code adds a number everytime the user picks an answer that relates to a good sleep schedule//
+	function GoodSleepScheduleAdd(){
             GoodSleepSchedule_count = GoodSleepSchedule_count + 1;
-		alert(GoodSleepSchedule_count);
-        } //adds the number of good sleep schedule symptoms
-
-function getResults (){
-	var BadSleepSchedulePercent = (BadSleepSchedule_count/4) * 100;
-	var GoodSleepSchedulePercent = (GoodSleepSchedule_count/4) * 100; 
-	var resultText = document.getElementById("results");
-	resultText.innerHTML = "Probability Of Bad Sleep Schedule =" +  BadSleepSchedulePercent + "<br> Probability Of A Good Sleep Schedule =" + GoodSleepSchedulePercent; 
-//calculates the probability of someone with a bad vs good sleep schedule by turning the count into percents. Then, it displays it to the user as a probability//
-
-</script>	
-
+	}
+//This code creates a percentage of the the code before for the results//
+	function getResult() {
+	var BadSleepSchedulePercent = (BadSleepSchedule_count/totalQuestions)*100
+	var GoodSleepSchedulePercent = (GoodSleepSchedule_count/totalQuestions)*100
+	}
+//This following code adds the percentages together//
+	var totalPercent = BadSleepSchedulePercent + GoodSleepSchedulePercent;
+	
 
 <!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
 <style>	

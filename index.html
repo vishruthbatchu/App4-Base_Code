@@ -57,11 +57,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   </style>
 </head>
 
+//title to questions//
 <body>
   <div class="w3-container w3-flat-carrot">
-    <h1>Good or Bad Sleep Schedule?</h1>
+    <h1>Good or Bad Sleep Schedule?</h1>        
   </div>
 
+ //introduction to questions//
   <div class="w3-container">
     <p>Answer a few short questions to find out how your sleep schedule is doing.</p>
     <a href="#one" class="w3-btn w3-grey w3-round">Get Started</a>
@@ -80,15 +82,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
   <!-- Question 1 -->
-  <div class="page" id="one">
-    <div class="w3-container w3-flat-carrot"><h1>Question 1</h1></div>
+  <div class="page" id="one">                                                                //creates the first page//
+    <div class="w3-container w3-flat-carrot"><h1>Question 1</h1></div> 
     <div class="w3-container">
-      <p>Do you wake up well-rested most mornings?</p>
-      <a href="#two" onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>
-      <a href="#two" onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
+      <p>Do you wake up well-rested most mornings?</p>   //my question//
+      <a href="#two" onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>        //button that says yes//
+      <a href="#two" onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>          //button that says no//
     </div>
   </div>
 
+ //the code above is what I used for all the questions
   <!-- Question 2 -->
   <div class="page" id="two">
     <div class="w3-container w3-flat-carrot"><h1>Question 2</h1></div>
@@ -133,11 +136,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     <p>DIY!</p>
   </footer>
 
+ //this code sets the total number of questions//
   <script>
     var totalQuestions = 4;
     var BadSleepSchedule_count = 0;
     var GoodSleepSchedule_count = 0;
-
+//this code adds the count of what responses are associated with a good or bad sleep schedule//
     function BadSleepScheduleAdd() {
       BadSleepSchedule_count += 1;
     }
@@ -146,22 +150,27 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       GoodSleepSchedule_count += 1;
     }
 
-    function getResult() {
+   // I used this code to calculate the results/
+   function getResult() {
       var BadSleepSchedulePercent = (BadSleepSchedule_count / totalQuestions) * 100;
       var GoodSleepSchedulePercent = (GoodSleepSchedule_count / totalQuestions) * 100;
       var totalPercent = BadSleepSchedulePercent + GoodSleepSchedulePercent;
-
+//mentor helped me a lot with this, but it is a scale the ensures comparability between the percentages.//
       if (totalPercent !== 100) {
         var scale = 100 / totalPercent;
         BadSleepSchedulePercent *= scale;
         GoodSleepSchedulePercent *= scale;
       }
-
+// how my results are displayed
       var resultText = document.getElementById("resultText");
       resultText.innerHTML =
         "Probability it is a Bad Sleep Schedule = " + BadSleepSchedulePercent.toFixed(2) + "%<br>" +
         "Probability it is a Good Sleep Schedule = " + GoodSleepSchedulePercent.toFixed(2) + "%";
-    }
-  </script>
-</body>
-</html>
+   
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+	</footer>
+		
+	</body>
+	
+	</html>

@@ -26,174 +26,144 @@ https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
-<head> 
-	<title>Good or Bad Sleep Schedule?</title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="stylesheet" href="w3.css">
-	<link rel="stylesheet" href="w3-colors-flat.css">
-</head> 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Good or Bad Sleep Schedule?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="w3-colors-flat.css">
+    <style>
+        .body {
+            margin: 0em;
+        }
 
-<script>
-//The code below states how many total questions and the initial values for a good or bad sleep schedule//
-	var totalQuestions =6
-	var BadSleepSchedule_count = 0;
-	var GoodSleepSchedule_count = 0;
-//this following code adds a number everytime the user picks an answer that relates to a bad sleep schedule//
-	function BadSleepScheduleAdd(){
-            BadSleepSchedule_count = BadSleepSchedule_count + 1;
-	}
-//this following code adds a number everytime the user picks an answer that relates to a good sleep schedule//
-	function GoodSleepScheduleAdd(){
-            GoodSleepSchedule_count = GoodSleepSchedule_count + 1;
-	}
-//This code creates a percentage of the the code before for the results//
-	function getResult() {
-	var BadSleepSchedulePercent = (BadSleepSchedule_count/totalQuestions)*100
-	var GoodSleepSchedulePercent = (GoodSleepSchedule_count/totalQuestions)*100
-	}
-//This following code adds the percentages together//
-	var totalPercent = BadSleepSchedulePercent + GoodSleepSchedulePercent;
-//this code adds a scale. my mentor helped me with this code//
-	if (totalPercent !==100) {
+        .page {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -100vw;
+            overflow-y: auto;
+            z-index: 0;
+            background-color: hsl(0, 0%, 100%);
+        }
 
-		var scale = 100 / totalPercent ;
-		BadSleepSchedulePercent *= scale;
-		GoodSleepSchedulePercent *= scale;
-	}	
+        .page:target {
+            left: 0vw;
+            z-index: 1;
+        }
+    </style>
+</head>
 
-var resultText = document.getElementById("resultText"); //this code triggers the results//
-
-//this following code sets the formula to display the results//
-resultText.innerHTML = "Probability it is a Bad Sleep Schedule =" + BadSleepSchedulePercent.toFixed(2) + "%" + "<br> Probability it is a Good Sleep Schedule =" + GoodSleepSchedulePercent.toFixed(2)+ "%"; 
-
-//TO SEND USER TO RESULTS PAGE. STRUGGLEd WITH THIS A LOT//
-location.href= "#results";
-	}
-
-
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
-<style>	
-.body {
-     margin: 0em;
-}
-
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
-
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
-
-
-
-
-</style>
-//first page of the questionaire//
 <body>
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Good or Bad Sleep Schedule?</h1>
-</div>
-//Introduction to the questionaire//	
-<div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
-	
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+    <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Good or Bad Sleep Schedule?</h1>
+    </div>
 
-<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	
-
-<div class="page" id="one">
-<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
-	</div>
-	
-    	<div id="content1" class="w3-container">
-        <p>Do you wake up well-rested most mornings?.</p>    
-	</div>
-//these lines of code adds to the running count of the responses that are associated with a good or bad sleep schedule. Then it takes the user to the next page 2. 
-	<a href="#two"  onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black"> Yes</a>
-	</div>	
-        <a href="#two"  onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
-	</div>	
-</div>	
-
-// the same code above is used for the next 4 questions//
-<div class="page" id="two">
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Question 2</h1>
-	</div>
-	
-	<div id="content3" class="w3-container">
-		<p>Do you go to sleep and wake up at roughly the same time every day?.</p>
-	</div.
-	
-	<a href="#three"  onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>
-	</div>
-	<a href="#three"  onclick="BadSleepScheduleAdd();" class="w3-btn w3-black"> No</a>
-	</div>
-	
-	</div>	
-
-<div class="page" id="three">
-<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-
-	<div id="content3" class="w3-container">
-		<p>Do you avoid screens at least 30 minutes before bedtime?.</p>
-       
-	<a href="#four"  onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>
-	<a href="#four"  onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
-
-	</div>
-
-	</div>	
-	
-<div class="page" id="four">
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Question 4</h1>
-	</div>
-	<div id="content4" class="w3-container">
-		<p>Do you get at least 7 hours of sleep on most nights</p>
-	
-	<a href="#five"onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black"> Yes</a>
-        <a href="#five"onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
-
-	</div>
-
-	</div>		
-
-<div class="page" id="results"> 
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Results Page</h1>
-</div>
-	
     <div id="content" class="w3-container">
-	<p>Click the button below to see your results!</p>
-		<a href="#results" class="w3-btn w3-black" onclick= "getResult();">See Results</a>	
-	</div>
-//Mentor helped me out with how to display results and following code//
-	<div id="resultContainer" class="w3 container">
-	<button onclick="getResult();" class="w3-button w3-white w3-round w3-hover-green"><b>Results</b></button>
-	<p id="resultText"></p>
+        <p>Are you feeling like you might have a cold but wonder if it is allergies? Answer a few short questions to find out!</p>
+        <a href="#one" class="w3-btn w3-grey w3-round">Get Started</a>
 
-	</script>
-<!-- Footer for every page -->
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
-</footer>
-	
-	
+        <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk.</p>
+    </div>
+
+    <!-- Question 1 -->
+    <div class="page" id="one">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 1</h1>
+        </div>
+        <div class="w3-container">
+            <p>Do you wake up well-rested most mornings?</p>
+            <a href="#two" onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>
+            <a href="#two" onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="page" id="two">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 2</h1>
+        </div>
+        <div class="w3-container">
+            <p>Do you go to sleep and wake up at roughly the same time every day?</p>
+            <a href="#three" onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>
+            <a href="#three" onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="page" id="three">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 3</h1>
+        </div>
+        <div class="w3-container">
+            <p>Do you avoid screens at least 30 minutes before bedtime?</p>
+            <a href="#four" onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>
+            <a href="#four" onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="page" id="four">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 4</h1>
+        </div>
+        <div class="w3-container">
+            <p>Do you get at least 7 hours of sleep on most nights?</p>
+            <a href="#results" onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black">Yes</a>
+            <a href="#results" onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div class="page" id="results">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Results Page</h1>
+        </div>
+        <div class="w3-container">
+            <p>Click the button below to see your results!</p>
+            <button onclick="getResult();" class="w3-button w3-white w3-round w3-hover-green"><b>See Results</b></button>
+            <p id="resultText"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>DIY!</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        var totalQuestions = 4;
+        var BadSleepSchedule_count = 0;
+        var GoodSleepSchedule_count = 0;
+
+        function BadSleepScheduleAdd() {
+            BadSleepSchedule_count += 1;
+        }
+
+        function GoodSleepScheduleAdd() {
+            GoodSleepSchedule_count += 1;
+        }
+
+        function getResult() {
+            var BadSleepSchedulePercent = (BadSleepSchedule_count / totalQuestions) * 100;
+            var GoodSleepSchedulePercent = (GoodSleepSchedule_count / totalQuestions) * 100;
+
+            var totalPercent = BadSleepSchedulePercent + GoodSleepSchedulePercent;
+
+            if (totalPercent !== 100) {
+                var scale = 100 / totalPercent;
+                BadSleepSchedulePercent *= scale;
+                GoodSleepSchedulePercent *= scale;
+            }
+
+            var resultText = document.getElementById("resultText");
+            resultText.innerHTML = "Probability it is a Bad Sleep Schedule = " + BadSleepSchedulePercent.toFixed(2) + "%" +
+                "<br>Probability it is a Good Sleep Schedule = " + GoodSleepSchedulePercent.toFixed(2) + "%";
+        }
+    </script>
 </body>
 </html>
-

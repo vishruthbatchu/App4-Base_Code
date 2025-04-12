@@ -64,6 +64,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 var resultText = document.getElementById("resultText"); //this code triggers the results//
 
+//this following code sets the formula to display the results//
+resultText.innerHTML = "Probability it is a Bad Sleep Schedule =" + BadSleepSchedulePercent.toFixed(2) + "%" + "<br> Probability it is a Good Sleep Schedule =" + GoodSleepSchedulePercent.toFixed(2)+ "%"; 
+
+
 
 
 <!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->

@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Vishruth Batchu 
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -16,11 +16,9 @@ Research Educator:
 Timothy Riedel
 triedel@utexas.edu
  
-Brief Description of Goal of Code:
-blah, blah, blah,
+Brief Description of Goal of Code: Be able to create an app that allows users to find out whether they have a good or bad sleep schedule
  
-Known Issues:
-blah, blah, blah, blah
+Known Issues: No issues as of now
 Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
 
 References:
@@ -38,24 +36,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-	var BadSleepSchedule_count = 0;
-        var GoodSleepSchedule_count = 0;
+	var BadSleepSchedule_count = 0; //counts the number of bad sleep schedule symptoms
+        var GoodSleepSchedule_count = 0; //counts the number of good sleep schedule symptoms
 
 
         function BadSleepScheduleAdd(){
             BadSleepSchedule_count = BadSleepSchedule_count + 1;
 		alert(BadSleepSchedule_count);
-//forgot the last parenthesis, code was not working//
-        }
+        } //adds the number of bad sleep schedule symptoms 
 
         function GoodSleepScheduleAdd(){
             GoodSleepSchedule_count = GoodSleepSchedule_count + 1;
-        }
-function resultsPercent () {
-	var resultsText = document.getElementById("results");
-	var BadSleepSchedulePercent = (BadSleepSchedule_count/4)*100;
-	var GoodSleepSchedulePercent = (GoodSleepSchedule_count/4)*100; 
-resultText.innerHTML = "Probability Of BadSleepSchedule =" +  BadSleepSchedulePercent + "<br> Probability Of A GoodSleepSchedule =" + GoodSleepSchedulePercent; 
+		alert(GoodSleepSchedule_count);
+        } //adds the number of good sleep schedule symptoms
+
+function getResults (){
+	var BadSleepSchedulePercent = (BadSleepSchedule_count/4) * 100;
+	var GoodSleepSchedulePercent = (GoodSleepSchedule_count/4) * 100; 
+	var resultText = document.getElementById("results");
+	resultText.innerHTML = "Probability Of Bad Sleep Schedule =" +  BadSleepSchedulePercent + "<br> Probability Of A Good Sleep Schedule =" + GoodSleepSchedulePercent; 
+//calculates the probability of someone with a bad vs good sleep schedule by turning the count into percents. Then, it displays it to the user as a probability//
 
 </script>	
 
@@ -86,16 +86,15 @@ resultText.innerHTML = "Probability Of BadSleepSchedule =" +  BadSleepSchedulePe
 
 
 </style>
-	<body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Good or Bad Sleep Schedule?</h1>
+
+<body>
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Good or Bad Sleep Schedule?</h1>
 </div>
 	
 <div id="content" class="w3-container">
 	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
-	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
-	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	
@@ -149,22 +148,26 @@ resultText.innerHTML = "Probability Of BadSleepSchedule =" +  BadSleepSchedulePe
 	<a href="#five"onclick="GoodSleepScheduleAdd();" class="w3-btn w3-black"> Yes</a>
 	</div>	
          <a href="#five"onclick="BadSleepScheduleAdd();" class="w3-btn w3-black">No</a>
-</div>
+	</div>
 </div>	
 <!I separated the buttons again and created a new page.
 	
-<div class="page" id="five">	
-	<div class="w3-container w3-flat-carrot">
-		<h2>Results </h2>
-<!My mentors helped a lot here. I did not know how to implement the results section. Even after I did, I struggled  with little things, such as where to place the code, quotation marks, etc. >
-</div>
-<div id="content" class="w3-container">
-	<p id="results"></p>
-	<a href="#five" onclick="resultsPercent();" class="w3-btn w3-black"> Click for Results!! </a>
-	
-	<footer class="w3-bottom w3-container w3-flat-carrot">
-<p>DIY!</p>
-</footer>
 
+<div class="page" id="five"> <!-- Creates Page 5 -->
+		<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results Page</h1>
+		</div>
+	
+    		<div id="content" class="w3-container">
+			<a class="w3-btn w3-black" onclick="getResults();">Click to view results</a> <!-- Button to run getResults function and calculate % chance of arthritis or bursitis -->
+			<p id= "results"></p>
+
+<!-- Footer for every page -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+	
+	
 </body>
 </html>
+
